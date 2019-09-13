@@ -1,7 +1,0 @@
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\bin\Debug\DungeonCrawl.exe.config
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\bin\Debug\DungeonCrawl.exe
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\bin\Debug\DungeonCrawl.pdb
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.csprojAssemblyReference.cache
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.csproj.CoreCompileInputs.cache
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.exe
-E:\Fall 19\CSC-253\DungeonCrawl\DungeonCrawl-master\DungeonCrawl-master\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.pdb
