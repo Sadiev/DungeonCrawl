@@ -9,15 +9,13 @@ using System.Threading.Tasks;
  * CSC 253
  * Bradley Legge
  * Dilshod Sadiev
- * This 
+ * Dungeon Crawl
  */
 
 namespace DungeonCrawl
 {
     class Program
     {
-
-
         static List<string> items = new List<string>() { "Book", "Candle", "Tools", "Rope" };
         static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
         public static int location = 0;
