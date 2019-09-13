@@ -33,14 +33,17 @@ namespace DungeonCrawl
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Dungeon Crawl.");
-            Console.WriteLine($"You are in the room {roomArray[location]}");
-
+            Play();
+        }
+        static void Play()
+        {
+            ColorPrint("Welcome to Dungeon Crawl.\n", ConsoleColor.Red);
             bool exit = false;
             Array.Sort(weaponArray);
 
             while (!exit)
             {
+                ColorPrint($"{roomArray[location]} >", ConsoleColor.Green);
                 switch (Console.ReadLine())
                 {
                     case "room":
@@ -55,8 +58,11 @@ namespace DungeonCrawl
                     case "treasure":
                         Print(tresArray);
                         break;
-                    case "exit":
-                        exit = true;
+                    case "item":
+                        Print(items.ToArray());
+                        break;
+                    case "mob":
+                        Print(mobs.ToArray());
                         break;
                     //case "help":
                     //    Print(help);
@@ -67,20 +73,27 @@ namespace DungeonCrawl
                     case "south":
                         Move("south");
                         break;
+                    case "exit":
+                        exit = true;
+                        break;
                     default:
-                        Console.WriteLine("Invalid choice!");
+                        Console.WriteLine("Command not found!");
                         break;
                 }
             }
-
         }
-
+        static void ColorPrint(string txt, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(txt);
+            Console.ResetColor();
+        }
         static void Print(string[] collection)
         {
             Console.WriteLine();
             foreach (var item in collection)
             {
-                Console.WriteLine(item);
+                ColorPrint($"{item}\n",ConsoleColor.Yellow);
             }
             Console.WriteLine();
         }
@@ -94,14 +107,14 @@ namespace DungeonCrawl
                     {
                         location++;
                     }
-                    Console.WriteLine($"Your location is {roomArray[location]}");
+                    //Console.WriteLine($"Your location is {roomArray[location]}");
                     break;
                 case "south":
                     if (location > 0)
                     {
                         location--;
                     }
-                    Console.WriteLine($"Your location is {roomArray[location]}");
+                    //Console.WriteLine($"Your location is {roomArray[location]}");
                     break;
                 default:
                     Console.WriteLine("Not a valid location");
