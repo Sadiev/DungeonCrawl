@@ -28,7 +28,7 @@ namespace DungeonCrawl
         //static string[] help = new string[] { "room - to print rooms", "weapon - to print weapons", "potion - to print weapons", "treasure - to print weapons",
         //                                    "north - to move north", "south - to move south", "exit - to exit program" };
         //TODO put in list, help array
-
+        //test git
         static void Main(string[] args)
         {
             Play();
