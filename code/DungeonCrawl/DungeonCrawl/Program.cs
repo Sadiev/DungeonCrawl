@@ -18,10 +18,11 @@ namespace DungeonCrawl
     {
         static List<string> items = new List<string>() { "Book", "Candle", "Tools", "Rope" };
         static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
+        
         public static int location = 0;
 
 
-        static string[] roomArray = new string[] { "Entrance", "Hallway", "Barracks", "Laboratory", "Temple" };
+        //static string[] roomArray = new string[] { "Entrance", "Hallway", "Barracks", "Laboratory", "Temple" };
         static string[] weaponArray = new string[] { "Longsword", "Bow", "Dagger", "Warhammer" };
         static string[] potArray = new string[] { "Health potion", "Armor potion" };
         static string[] tresArray = new string[] { "Gold", "Weapon", "Trinket" };
@@ -31,6 +32,7 @@ namespace DungeonCrawl
 
         static void Main(string[] args)
         {
+            Room.Upload();
             Play();
         }
         static void Play()
@@ -41,11 +43,11 @@ namespace DungeonCrawl
 
             while (!exit)
             {
-                ColorPrint($"{roomArray[location]} >", ConsoleColor.Green);
+                ColorPrint($"{Lists.rooms[location].RoomName} >", ConsoleColor.Green);
                 switch (Console.ReadLine())
                 {
                     case "room":
-                        Print(roomArray);
+                        Room.Display();
                         break;
                     case "weapon":
                         Print(weaponArray);
@@ -71,6 +73,9 @@ namespace DungeonCrawl
                     case "south":
                         Move("south");
                         break;
+                    case "add room":
+                        Room.Write();
+                        break;
                     case "exit":
                         exit = true;
                         break;
@@ -80,7 +85,7 @@ namespace DungeonCrawl
                 }
             }
         }
-        static void ColorPrint(string txt, ConsoleColor color)
+        public static void ColorPrint(string txt, ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.Write(txt);
@@ -101,7 +106,7 @@ namespace DungeonCrawl
             switch (direction)
             {
                 case "north":
-                    if (location < roomArray.Length)
+                    if (location < Lists.rooms.Count)
                     {
                         location++;
                     }
