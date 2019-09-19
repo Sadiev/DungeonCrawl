@@ -15,7 +15,7 @@ namespace DungeonCrawl
 
         public static void Write()
         {
-            try
+            try//test
             {
                 StreamWriter outputFile;
                 outputFile = File.AppendText("Rooms.txt");

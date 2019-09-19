@@ -1,0 +1,7 @@
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\bin\Debug\DungeonCrawl.exe.config
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\bin\Debug\DungeonCrawl.exe
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\bin\Debug\DungeonCrawl.pdb
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.csprojAssemblyReference.cache
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.csproj.CoreCompileInputs.cache
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.exe
+C:\Users\dilsh\source\repos\DungeonCrawl\code\DungeonCrawl\DungeonCrawl\obj\Debug\DungeonCrawl.pdb
