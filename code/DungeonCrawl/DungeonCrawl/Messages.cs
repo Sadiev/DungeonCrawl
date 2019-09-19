@@ -28,7 +28,8 @@ namespace DungeonCrawl
         {
             get
             {
-                return "Enter a class you wish to play > ";
+                return "Enter a class you wish to play" +
+                       "\nWarrior, Ranger, Wizard > ";
             }
         }
 
@@ -36,7 +37,8 @@ namespace DungeonCrawl
         {
             get
             {
-                return "Enter a race you wish to play > ";
+                return "Enter a race you wish to play" +
+                       "\nHuman, Dwarf, Elf > ";
             }
         }
 
