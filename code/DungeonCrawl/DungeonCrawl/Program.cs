@@ -157,6 +157,8 @@ namespace DungeonCrawl
 
             Console.WriteLine(myMessages.PromptRace);
             myPlayer.Race = Console.ReadLine();
+
+            Player.WriteFile(myPlayer);
         }
     }
 }
