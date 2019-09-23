@@ -15,10 +15,10 @@ namespace DungeonCrawl
 
         public static void Write()
         {
-            try//test
+            try
             {
                 StreamWriter outputFile;
-                outputFile = File.AppendText("Rooms.txt");
+                outputFile = File.AppendText("../../../DungeonCrawl/Data/Rooms.txt");
                 Console.Write("Enter a room name > ");
                 outputFile.WriteLine(Console.ReadLine());
                 Console.Write("Enter the room description > ");
@@ -35,14 +35,12 @@ namespace DungeonCrawl
 
         public static void Upload()
         {
-
             try
             {
                 StreamReader roomsFile;
                 string txt = "";
-                roomsFile = File.OpenText("Rooms.txt");
+                roomsFile = File.OpenText("../../../DungeonCrawl/Data/Rooms.txt");
                 bool done = false;
-
                 do
                 {
                     if ((txt = roomsFile.ReadLine()) == null)

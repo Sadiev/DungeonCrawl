@@ -1,0 +1,5 @@
+﻿Goblin
+a small guy, for you
+10
+5
+0

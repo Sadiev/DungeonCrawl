@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Lists.cs" />
     <Compile Include="Messages.cs" />
+    <Compile Include="Mob.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Mobs.txt" />
+    <Content Include="Data\Rooms.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

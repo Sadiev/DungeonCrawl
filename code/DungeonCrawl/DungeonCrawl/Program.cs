@@ -17,7 +17,7 @@ namespace DungeonCrawl
     class Program
     {
         static List<string> items = new List<string>() { "Book", "Candle", "Tools", "Rope" };
-        static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
+        //static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
         
         public static int location = 0;
 
@@ -47,7 +47,7 @@ namespace DungeonCrawl
                     Console.WriteLine("Invalid input! Please enter yes or no!");
                     break;
             }
-
+            Mob.Upload();
             Room.Upload();
             Play();
         }
@@ -59,7 +59,7 @@ namespace DungeonCrawl
 
             while (!exit)
             {
-                ColorPrint($"{Lists.rooms[location].RoomName} >", ConsoleColor.Green);
+                ColorPrint($"HP >", ConsoleColor.Green);
                 switch (Console.ReadLine())
                 {
                     case "room":
@@ -78,11 +78,8 @@ namespace DungeonCrawl
                         Print(items.ToArray());
                         break;
                     case "mob":
-                        Print(mobs.ToArray());
+                        Mob.Display();
                         break;
-                    //case "help":
-                    //    Print(help);
-                    //    break;
                     case "north":
                         Move("north");
                         break;
