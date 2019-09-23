@@ -16,7 +16,7 @@ namespace DungeonCrawl
 {
     class Program
     {
-        static List<string> items = new List<string>() { "Book", "Candle", "Tools", "Rope" };
+        //static List<string> items = new List<string>() { "Book", "Candle", "Tools", "Rope" };
         //static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
         
         public static int location = 0;
@@ -47,6 +47,7 @@ namespace DungeonCrawl
                     Console.WriteLine("Invalid input! Please enter yes or no!");
                     break;
             }
+            Item.Upload();
             Mob.Upload();
             Room.Upload();
             Play();
@@ -75,7 +76,7 @@ namespace DungeonCrawl
                         Print(tresArray);
                         break;
                     case "item":
-                        Print(items.ToArray());
+                        Item.Display();
                         break;
                     case "mob":
                         Mob.Display();

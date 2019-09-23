@@ -10,5 +10,6 @@ namespace DungeonCrawl
     {
         public static List<Room> rooms = new List<Room>();
         public static List<Mob> mobs = new List<Mob>();
+        public static List<Item> items = new List<Item>();
     }
 }

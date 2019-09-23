@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Item.cs" />
     <Compile Include="Lists.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="Mob.cs" />
@@ -55,6 +56,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Data\Items.txt" />
     <Content Include="Data\Mobs.txt" />
     <Content Include="Data\Rooms.txt" />
   </ItemGroup>
