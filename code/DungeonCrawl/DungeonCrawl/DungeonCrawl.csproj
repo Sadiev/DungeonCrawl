@@ -54,7 +54,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Users\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Items.txt" />
     <Content Include="Data\Mobs.txt" />

@@ -35,7 +35,7 @@ namespace DungeonCrawl
             try
             {
                 StreamWriter outputFile;
-                outputFile = File.AppendText($"{myPlayer.PlayerName}.txt");
+                outputFile = File.AppendText($"../../../DungeonCrawl/Users/{myPlayer.PlayerName}.txt");
 
                 outputFile.WriteLine(myPlayer.PlayerName);
                 outputFile.WriteLine(myPlayer.Password);

@@ -32,6 +32,15 @@ namespace DungeonCrawl
 
         static void Main(string[] args)
         {
+            AskLogin();
+            Item.Upload();
+            Mob.Upload();
+            Room.Upload();
+            Play();
+        }
+
+        static void AskLogin()
+        {
             Console.WriteLine("Do you wish to create a new player? (yes/no)");
             string userInput = Console.ReadLine();
             switch (userInput)
@@ -45,13 +54,11 @@ namespace DungeonCrawl
                     break;
                 default:
                     Console.WriteLine("Invalid input! Please enter yes or no!");
+                    AskLogin();
                     break;
             }
-            Item.Upload();
-            Mob.Upload();
-            Room.Upload();
-            Play();
         }
+
         static void Play()
         {
             ColorPrint("Welcome to Dungeon Crawl.\n", ConsoleColor.Red);
