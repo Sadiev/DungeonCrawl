@@ -37,7 +37,7 @@ namespace DungeonCrawl
             switch (userInput)
             {
                 case "yes":
-                    PlayerInfo();
+                    Player.PlayerInfo();
                     break;
                 case "no":
                     Console.WriteLine("What is the name of the player you wish to play? > ");
@@ -137,26 +137,6 @@ namespace DungeonCrawl
                     Console.WriteLine("Not a valid location");
                     break;
             }
-        }
-
-        public static void PlayerInfo()
-        {
-            Messages myMessages = new Messages();
-            Player myPlayer = new Player();
-
-            Console.WriteLine(myMessages.PromptName);
-            myPlayer.PlayerName = Console.ReadLine();
-
-            Console.WriteLine(myMessages.PromptPassword);
-            myPlayer.Password = Console.ReadLine();
-
-            Console.WriteLine(myMessages.PromptClass);
-            myPlayer.Class = Console.ReadLine();
-
-            Console.WriteLine(myMessages.PromptRace);
-            myPlayer.Race = Console.ReadLine();
-
-            Player.WriteFile(myPlayer);
         }
     }
 }
