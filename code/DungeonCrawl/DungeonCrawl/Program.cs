@@ -32,7 +32,7 @@ namespace DungeonCrawl
 
         static void Main(string[] args)
         {
-            AskLogin();
+            //AskLogin();
             Weapon.Upload();
             Treasures.Upload();
             Potion.Upload();
@@ -66,11 +66,15 @@ namespace DungeonCrawl
         {
             ColorPrint("Welcome to Dungeon Crawl.\n", ConsoleColor.Red);
             bool exit = false;
-
+            string input = "";
+            //List<string> inputList
             while (!exit)
             {
                 ColorPrint($"HP >", ConsoleColor.Green);
-                switch (Console.ReadLine())
+                input = Console.ReadLine();
+                var inputList = input.Split(' ');
+                
+                switch (inputList[0])
                 {
                     case "room":
                         Room.Display();
@@ -99,6 +103,9 @@ namespace DungeonCrawl
                     case "add room":
                         Room.Write();
                         break;
+                    case "look":
+                        PrintList(inputList[1]);
+                        break;
                     case "exit":
                         exit = true;
                         break;
@@ -114,6 +121,19 @@ namespace DungeonCrawl
             Console.Write(txt);
             Console.ResetColor();
         }
+
+        static void PrintList(string list)
+        {
+            if (Lists.items[0].ItemName.Contains(list))
+            {
+                Console.WriteLine("print");
+            }
+            else
+            {
+                Console.WriteLine("not found");
+            }
+        }
+
         static void Print(string[] collection)
         {
             Console.WriteLine();
