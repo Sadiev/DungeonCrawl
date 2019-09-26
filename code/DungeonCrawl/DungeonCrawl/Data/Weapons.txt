@@ -1,0 +1,16 @@
+﻿Shortsword
+1d6
+Slashing
+15
+Crossbow
+1d8
+Piercing
+25
+Dagger
+1d4
+Piercing
+2
+Warhammer
+1d8
+Blundgeoning
+15

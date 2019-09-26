@@ -1,0 +1,12 @@
+﻿Healing Potion
+Heals 10
+20
+Greater Healing Potion
+Heals 20
+40
+Armor Potion
+Adds 2 AC
+100
+Greater Armor Potion
+Adds 3 AC
+200

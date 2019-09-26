@@ -7,16 +7,11 @@ using System.IO;
 
 namespace DungeonCrawl
 {
-    public enum ClassType { Warrior, Ranger, Wizard }
-    public enum RaceType { Human, Dwarf, Elf }
+    public enum ClassType { warrior, ranger, wizard }
+    public enum RaceType { human, dwarf, elf }
 
     public class Player
     {
-        private string _playerName;
-        private string _password;
-        private string _className;
-        private string _raceName;
-
         public Player(string name, string password, string className, string raceName)
         {
             PlayerName = name;
@@ -25,10 +20,18 @@ namespace DungeonCrawl
             RaceName = raceName;
         }
 
-        public string PlayerName { get { return _playerName; } set { _playerName = value; } }
-        public string Password { get { return _password; } set { _password = value; } }
-        public string ClassName { get { return _className; } set { _className = value; } }
-        public string RaceName { get { return _raceName; } set { _raceName = value; } }
+        public Player()
+        {
+            PlayerName = "";
+            Password = "";
+            ClassName = "";
+            RaceName = "";
+        }
+
+        public string PlayerName { get; set; }
+        public string Password { get; set; }
+        public string ClassName { get; set; }
+        public string RaceName { get; set; }
 
         public static void WriteFile(Player myPlayer)
         {
@@ -50,12 +53,43 @@ namespace DungeonCrawl
             }
         }
 
+        public static void ReadFile()
+        {
+            string playerName;
+
+            Console.WriteLine("Enter the name of a player you wish to use.");
+            Console.Write("> ");
+            playerName = Console.ReadLine();
+
+            try
+            {
+                StreamReader inputFile;
+                inputFile = File.OpenText($"../../../DungeonCrawl/Users/{playerName}.txt");
+
+                while (!inputFile.EndOfStream)
+                {
+                    string name = inputFile.ReadLine();
+                    string password = inputFile.ReadLine();
+                    string className = inputFile.ReadLine();
+                    string raceName = inputFile.ReadLine();
+
+                    Player myPlayer = new Player(name, password, className, raceName);
+                }
+                inputFile.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading file '{playerName}'");
+            }
+        }
+
         public static void PlayerInfo()
         {
             string name = "";
             string password = "";
             string className = "";
             string raceName = "";
+            bool goodPassword = false;
             bool goodClass = false;
             bool goodRace = false;
 
@@ -63,20 +97,32 @@ namespace DungeonCrawl
             Console.Write("> ");
             name = Console.ReadLine();
 
-            Console.WriteLine("Enter a password.");
-            Console.Write("> ");
-            password = Console.ReadLine();
+            do
+            {
+                Console.WriteLine("Enter a password.");
+                Console.WriteLine("Must contain 1 uppercase, 1 lowercase, and 1 special character (!,@,#,$,%,&,*,?)");
+                Console.Write("> ");
+                password = Console.ReadLine();
 
+                if(Conversion.UpperCase(password) >= 1 && Conversion.LowerCase(password) >= 1 && Conversion.SpecialCase(password) >= 1)
+                {
+                    goodPassword = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Password!");
+                }
 
+            } while (goodPassword == false);
 
             while (goodClass == false)
             {
                 Console.WriteLine("Enter a class you wish to play.");
                 Console.WriteLine("Warrior, Ranger, Wizard");
                 Console.Write("> ");
-                className = Console.ReadLine();
+                className = Conversion.ConvertToLower(Console.ReadLine());
 
-                if (className == ClassType.Warrior.ToString() || className == ClassType.Ranger.ToString() || className == ClassType.Wizard.ToString())
+                if (className == ClassType.warrior.ToString() || className == ClassType.ranger.ToString() || className == ClassType.wizard.ToString())
                 {
                     goodClass = true;
                 }
@@ -87,9 +133,9 @@ namespace DungeonCrawl
                 Console.WriteLine("Enter a race you wish to play.");
                 Console.WriteLine("Human, Dwarf, Elf");
                 Console.Write("> ");
-                raceName = Console.ReadLine();
+                raceName = Conversion.ConvertToLower(Console.ReadLine());
 
-                if (raceName == RaceType.Human.ToString() || raceName == RaceType.Dwarf.ToString() || raceName == RaceType.Elf.ToString())
+                if (raceName == RaceType.human.ToString() || raceName == RaceType.dwarf.ToString() || raceName == RaceType.elf.ToString())
                 {
                     goodRace = true;
                 }
@@ -97,7 +143,6 @@ namespace DungeonCrawl
 
 
             Player myPlayer = new Player(name, password, className, raceName);
-
 
             Player.WriteFile(myPlayer);
         }

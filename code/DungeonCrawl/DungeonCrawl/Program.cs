@@ -23,9 +23,9 @@ namespace DungeonCrawl
 
 
         //static string[] roomArray = new string[] { "Entrance", "Hallway", "Barracks", "Laboratory", "Temple" };
-        static string[] weaponArray = new string[] { "Longsword", "Bow", "Dagger", "Warhammer" };
-        static string[] potArray = new string[] { "Health potion", "Armor potion" };
-        static string[] tresArray = new string[] { "Gold", "Weapon", "Trinket" };
+        //static string[] weaponArray = new string[] { "Shortsword", "Crossbow", "Dagger", "Warhammer" };
+        //static string[] potArray = new string[] { "Health potion", "Armor potion" };
+        //static string[] tresArray = new string[] { "Gold", "Weapon", "Trinket" };
         //static string[] help = new string[] { "room - to print rooms", "weapon - to print weapons", "potion - to print weapons", "treasure - to print weapons",
         //                                    "north - to move north", "south - to move south", "exit - to exit program" };
         //TODO put in list, help array
@@ -33,6 +33,9 @@ namespace DungeonCrawl
         static void Main(string[] args)
         {
             AskLogin();
+            Weapon.Upload();
+            Treasures.Upload();
+            Potion.Upload();
             Item.Upload();
             Mob.Upload();
             Room.Upload();
@@ -43,14 +46,14 @@ namespace DungeonCrawl
         {
             Console.WriteLine("Do you wish to create a new player? (yes/no)");
             string userInput = Console.ReadLine();
+
             switch (userInput)
             {
                 case "yes":
                     Player.PlayerInfo();
                     break;
                 case "no":
-                    Console.WriteLine("What is the name of the player you wish to play? > ");
-                    //TODO upload file of existing player
+                    Player.ReadFile();
                     break;
                 default:
                     Console.WriteLine("Invalid input! Please enter yes or no!");
@@ -63,7 +66,6 @@ namespace DungeonCrawl
         {
             ColorPrint("Welcome to Dungeon Crawl.\n", ConsoleColor.Red);
             bool exit = false;
-            Array.Sort(weaponArray);
 
             while (!exit)
             {
@@ -74,13 +76,13 @@ namespace DungeonCrawl
                         Room.Display();
                         break;
                     case "weapon":
-                        Print(weaponArray);
+                        Weapon.Display();
                         break;
                     case "potion":
-                        Print(potArray);
+                        Potion.Display();
                         break;
                     case "treasure":
-                        Print(tresArray);
+                        Treasures.Display();
                         break;
                     case "item":
                         Item.Display();
