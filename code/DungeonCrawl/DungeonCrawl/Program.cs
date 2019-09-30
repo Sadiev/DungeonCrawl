@@ -122,16 +122,60 @@ namespace DungeonCrawl
             Console.ResetColor();
         }
 
-        static void PrintList(string list)
+        static void PrintList(string name)
         {
-            if (Lists.items[0].ItemName.Contains(list))
+            var item = Lists.items.Find(x => x.ItemName.ToLower() == name.ToLower());
+            if (item != null)
             {
-                Console.WriteLine("print");
+                Console.WriteLine(item.ItemName);
+                Console.WriteLine(item.Description);
+                Console.WriteLine(item.Cost);
+                return;
             }
-            else
+            var mob = Lists.mobs.Find(x => x.MobName.ToLower() == name.ToLower());
+            if (mob != null)
             {
-                Console.WriteLine("not found");
+                Console.WriteLine(mob.MobName);
+                Console.WriteLine(mob.Description);
+                Console.WriteLine(mob.Armor);
+                Console.WriteLine(mob.AC);
+                Console.WriteLine(mob.HP);
+                return;
             }
+            var p = Lists.potion.Find(x => x.Name.ToLower() == name.ToLower());
+            if (p != null)
+            {
+                Console.WriteLine(p.Name);
+                Console.WriteLine(p.Description);
+                Console.WriteLine(p.Cost);
+                return;
+            }
+            var room = Lists.rooms.Find(x => x.RoomName.ToLower() == name.ToLower());
+            if (room != null)
+            {
+                Console.WriteLine(room.RoomName);
+                Console.WriteLine(room.Description);
+                Console.WriteLine(room.Exits);
+                return;
+            }
+            var t = Lists.treasure.Find(x => x.Name.ToLower() == name.ToLower());
+            if (t != null)
+            {
+                Console.WriteLine(t.Name);
+                Console.WriteLine(t.Description);
+                Console.WriteLine(t.Cost);
+                return;
+            }
+            var w = Lists.weapon.Find(x => x.Name.ToLower() == name.ToLower());
+            if (w != null)
+            {
+                Console.WriteLine(w.Name);
+                Console.WriteLine(w.Damage);
+                Console.WriteLine(w.DamageType);
+                Console.WriteLine(w.Cost);
+                return;
+            }
+            Console.WriteLine("The object not found!");
         }
 
         static void Print(string[] collection)
