@@ -14,5 +14,7 @@ namespace DungeonCrawl
         public static List<Weapon> weapon = new List<Weapon>();
         public static List<Treasures> treasure = new List<Treasures>();
         public static List<Potion> potion = new List<Potion>();
+
+        public static Player CurrentPlayer { get; set; }
     }
 }

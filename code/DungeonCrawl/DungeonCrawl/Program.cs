@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawl
 {
-    class Program
+    public class Program
     {
         //static List<string> items = new List<string>() { "Book", "Candle", "Tools", "Rope" };
         //static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
@@ -30,9 +30,9 @@ namespace DungeonCrawl
         //                                    "north - to move north", "south - to move south", "exit - to exit program" };
         //TODO put in list, help array
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //AskLogin();
+            AskLogin();
             Weapon.Upload();
             Treasures.Upload();
             Potion.Upload();
@@ -42,7 +42,7 @@ namespace DungeonCrawl
             Play();
         }
 
-        static void AskLogin()
+        public static void AskLogin()
         {
             Console.WriteLine("Do you wish to create a new player? (yes/no)");
             string userInput = Console.ReadLine();

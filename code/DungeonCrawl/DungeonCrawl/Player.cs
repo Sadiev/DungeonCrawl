@@ -47,7 +47,7 @@ namespace DungeonCrawl
 
                 outputFile.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Console.WriteLine($"Error reading file {myPlayer.PlayerName}!");
             }
@@ -56,10 +56,16 @@ namespace DungeonCrawl
         public static void ReadFile()
         {
             string playerName;
+            string psswrd;
+            bool exit = false;
 
             Console.WriteLine("Enter the name of a player you wish to use.");
             Console.Write("> ");
             playerName = Console.ReadLine();
+
+            Console.WriteLine("Enter password.");
+            Console.Write("> ");
+            psswrd = Console.ReadLine();
 
             try
             {
@@ -73,13 +79,30 @@ namespace DungeonCrawl
                     string className = inputFile.ReadLine();
                     string raceName = inputFile.ReadLine();
 
-                    Player myPlayer = new Player(name, password, className, raceName);
+                    while (exit == false)
+                    {
+                        if (psswrd != password)
+                        {
+                            Console.WriteLine("Password is incorrect! Try again!");
+                            Console.Write("> ");
+                            psswrd = Console.ReadLine();
+                        }
+                        else
+                        {
+                            exit = true;
+                        }
+                    }
+
+                    Lists.CurrentPlayer = new Player(name, password, className, raceName);
                 }
+
+                Program.ColorPrint($"Welcome {Lists.CurrentPlayer.PlayerName}.", ConsoleColor.Green);
                 inputFile.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error reading file '{playerName}'");
+                Console.Write($"{playerName}, doesnt exist.");
+                Program.AskLogin();
             }
         }
 
@@ -92,10 +115,23 @@ namespace DungeonCrawl
             bool goodPassword = false;
             bool goodClass = false;
             bool goodRace = false;
+            bool exit = false;
 
-            Console.WriteLine("Enter a player name you wish to use.");
-            Console.Write("> ");
-            name = Console.ReadLine();
+            while (exit == false)
+            {
+                Console.WriteLine("Enter a player name you wish to use.");
+                Console.Write("> ");
+                name = Console.ReadLine();
+
+                if (File.Exists($"../../../DungeonCrawl/Users/{name}.txt"))
+                {
+                    Console.WriteLine("This character already exists!");
+                }
+                else
+                {
+                    exit = true;
+                }
+            }
 
             do
             {
@@ -104,7 +140,7 @@ namespace DungeonCrawl
                 Console.Write("> ");
                 password = Console.ReadLine();
 
-                if(Conversion.UpperCase(password) >= 1 && Conversion.LowerCase(password) >= 1 && Conversion.SpecialCase(password) >= 1)
+                if (Conversion.UpperCase(password) >= 1 && Conversion.LowerCase(password) >= 1 && Conversion.SpecialCase(password) >= 1)
                 {
                     goodPassword = true;
                 }
