@@ -20,6 +20,7 @@ namespace DungeonCrawl
         //static List<string> mobs = new List<string>() { "wolf", "spider", "snake", "dog", "cat" };
         
         public static int location = 0;
+        //new comment
 
 
         //static string[] roomArray = new string[] { "Entrance", "Hallway", "Barracks", "Laboratory", "Temple" };
