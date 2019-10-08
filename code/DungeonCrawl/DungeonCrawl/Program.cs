@@ -30,7 +30,7 @@ namespace DungeonCrawl
         //                                    "north - to move north", "south - to move south", "exit - to exit program" };
         //TODO put in list, help array
 
-        public static void Main(string[] args)//test git
+        public static void Main(string[] args)//test git hub
         {
             AskLogin();
             Weapon.Upload();
