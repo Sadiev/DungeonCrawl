@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
     public class Weapon
     {
@@ -30,13 +30,13 @@ namespace DungeonCrawl
         public string DamageType { get; set; }
         public int Cost { get; set; }
 
-        public static void Display()
+        public static string Display()
         {
-            Console.WriteLine();
             foreach(var i in Lists.weapon)
             {
-                Console.WriteLine($"{i.Name}");
+                return $"{i.Name}";
             }
+            return null;
         }
 
         public static void Upload()
@@ -44,7 +44,7 @@ namespace DungeonCrawl
             try
             {
                 StreamReader inputFile;
-                inputFile = File.OpenText("../../../DungeonCrawl/Data/Weapons.txt");
+                inputFile = File.OpenText("../../../ClassLibrary/Data/Weapons.txt");
 
                 while (!inputFile.EndOfStream)
                 {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
-    class Lists
+    public class Lists
     {
         public static List<Room> rooms = new List<Room>();
         public static List<Mob> mobs = new List<Mob>();

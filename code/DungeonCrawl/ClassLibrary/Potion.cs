@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
     public class Potion
     {
@@ -28,13 +28,13 @@ namespace DungeonCrawl
         public int Cost { get; set; }
 
 
-        public static void Display()
+        public static string Display()
         {
-            Console.WriteLine();
             foreach(var i in Lists.potion)
             {
-                Console.WriteLine($"{i.Name}");
+                return $"{i.Name}";
             }
+            return null;
         }
 
         public static void Upload()
@@ -42,7 +42,7 @@ namespace DungeonCrawl
             try
             {
                 StreamReader inputFile;
-                inputFile = File.OpenText("../../../DungeonCrawl/Data/Potion.txt");
+                inputFile = File.OpenText("../../../ClassLibrary/Data/Potion.txt");
 
                 while(!inputFile.EndOfStream)
                 {

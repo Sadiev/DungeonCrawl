@@ -5,22 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
-    class Item
+    public class Item
     {
         public string ItemName { get; set; }
         public string Description { get; set; }
         public decimal Cost { get; set; }
 
-        public static void Display()
+        public static string Display()
         {
-            Console.WriteLine();
             foreach (var item in Lists.items)
             {
-                Program.ColorPrint($"{item.ItemName}\n", ConsoleColor.Yellow);
+                return $"{item.ItemName}\n";
             }
-            Console.WriteLine();
+            return null;
         }
         public static void Upload()
         {
@@ -28,7 +27,7 @@ namespace DungeonCrawl
             {
                 StreamReader itemFile;
                 string txt = "";
-                itemFile = File.OpenText("../../../DungeonCrawl/Data/Items.txt");
+                itemFile = File.OpenText("../../../ClassLibrary/Data/Items.txt");
                 bool done = false;
                 do
                 {

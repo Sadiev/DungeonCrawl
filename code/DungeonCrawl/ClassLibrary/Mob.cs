@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
-    class Mob
+    public class Mob
     {
         //public int ID { get; set; }
         public string MobName { get; set; }
@@ -15,14 +15,13 @@ namespace DungeonCrawl
         public int HP { get; set; }
         public int AC { get; set; }
         public int Armor { get; set; }
-        public static void Display()
+        public static string Display()
         {
-            Console.WriteLine();
             foreach (var item in Lists.mobs)
             {
-                Program.ColorPrint($"{item.MobName}\n", ConsoleColor.Yellow);
+                return $"{item.MobName}\n";
             }
-            Console.WriteLine();
+            return null;
         }
         public static void Upload()
         {
@@ -30,7 +29,7 @@ namespace DungeonCrawl
             {
                 StreamReader roomsFile;
                 string txt = "";
-                roomsFile = File.OpenText("../../../DungeonCrawl/Data/Mobs.txt");
+                roomsFile = File.OpenText("../../../ClassLibrary/Data/Mobs.txt");
                 bool done = false;
                 do
                 {

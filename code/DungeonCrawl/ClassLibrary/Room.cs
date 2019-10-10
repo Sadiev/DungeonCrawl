@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
-    class Room
+    public class Room
     {
         public string RoomName { get; set; }
         public string Description { get; set; }
@@ -18,7 +18,7 @@ namespace DungeonCrawl
             try
             {
                 StreamWriter outputFile;
-                outputFile = File.AppendText("../../../DungeonCrawl/Data/Rooms.txt");
+                outputFile = File.AppendText("../../../ClassLibrary/Data/Rooms.txt");
                 Console.Write("Enter a room name > ");
                 outputFile.WriteLine(Console.ReadLine());
                 Console.Write("Enter the room description > ");
@@ -39,7 +39,7 @@ namespace DungeonCrawl
             {
                 StreamReader roomsFile;
                 string txt = "";
-                roomsFile = File.OpenText("../../../DungeonCrawl/Data/Rooms.txt");
+                roomsFile = File.OpenText("../../../ClassLibrary/Data/Rooms.txt");
                 bool done = false;
                 do
                 {
@@ -61,14 +61,13 @@ namespace DungeonCrawl
             }
         }
 
-        public static void Display()
+        public static string Display()
         {
-            Console.WriteLine();
             foreach (var item in Lists.rooms)
             {
-                Program.ColorPrint($"{item.RoomName}\n", ConsoleColor.Yellow);
+                return $"{item.RoomName}\n";
             }
-            Console.WriteLine();
+            return null;
         }
     }
 }

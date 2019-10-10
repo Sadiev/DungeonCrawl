@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace DungeonCrawl
+namespace ClassLibrary
 {
     public class Treasures
     {
@@ -27,13 +27,13 @@ namespace DungeonCrawl
         public string Description { get; set; }
         public int Cost { get; set; }
 
-        public static void Display()
+        public static string Display()
         {
-            Console.WriteLine();
             foreach(var i in Lists.treasure)
             {
-                Console.WriteLine($"{i.Name}");
+                return $"{i.Name}";
             }
+            return null;
         }
 
         public static void Upload()
@@ -41,7 +41,7 @@ namespace DungeonCrawl
             try
             {
                 StreamReader inputFile;
-                inputFile = File.OpenText("../../../DungeonCrawl/Data/Treasures.txt");
+                inputFile = File.OpenText("../../../ClassLibrary/Data/Treasures.txt");
 
                 while (!inputFile.EndOfStream)
                 {
