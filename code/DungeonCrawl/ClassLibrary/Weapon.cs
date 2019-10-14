@@ -38,30 +38,5 @@ namespace ClassLibrary
             }
             return null;
         }
-
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../ClassLibrary/Data/Weapons.txt");
-
-                while (!inputFile.EndOfStream)
-                {
-
-                    string name = inputFile.ReadLine();
-                    string damage = inputFile.ReadLine();
-                    string damageType = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
-
-                    Lists.weapon.Add(new Weapon(name, damage, damageType, cost));
-                }
-                inputFile.Close();;
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Error reading file 'Weapons.txt'");
-            }
-        }
     }
 }

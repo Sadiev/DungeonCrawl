@@ -27,12 +27,12 @@ namespace DungeonCrawl
         public static void Main(string[] args)//test git hub
         {
             LoginInfo.AskLogin();
-            Weapon.Upload();
-            Treasures.Upload();
-            Potion.Upload();
-            Item.Upload();
-            Mob.Upload();
-            Room.Upload();
+            Upload.Weapon();
+            Upload.Treasures();
+            Upload.Item();
+            Upload.Mob();
+            Upload.Potion();
+            Upload.Room();
             Play();
         }
 
