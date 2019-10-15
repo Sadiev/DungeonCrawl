@@ -1,9 +1,3 @@
-﻿Gold
-Leather satchel containing gold coins
-50
-Gems
-Rubies and diamonds
-100
-Trinket
-Statue of a god
-75
+﻿Gold,Leather satchel containing gold coins,50
+Gems,Rubies and diamonds,100
+Trinket,Statue of a god,75

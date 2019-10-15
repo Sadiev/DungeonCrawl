@@ -31,33 +31,33 @@ namespace DungeonCrawl
         public static void Display()
         {
             Console.WriteLine();
-            foreach(var i in Lists.potion)
+            foreach(var i in Global.potion)
             {
                 Console.WriteLine($"{i.Name}");
             }
         }
 
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../DungeonCrawl/Data/Potion.txt");
+        //public static void Upload()
+        //{
+        //    try
+        //    {
+        //        StreamReader inputFile;
+        //        inputFile = File.OpenText("../../../DungeonCrawl/Data/Potion.txt");
 
-                while(!inputFile.EndOfStream)
-                {
-                    string name = inputFile.ReadLine();
-                    string description = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
+        //        while(!inputFile.EndOfStream)
+        //        {
+        //            string name = inputFile.ReadLine();
+        //            string description = inputFile.ReadLine();
+        //            int cost = int.Parse(inputFile.ReadLine());
 
-                    Lists.potion.Add(new Potion(name, description, cost));
-                }
-                inputFile.Close();
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Error reading file 'Potion.txt'");
-            }
-        }
+        //            Global.potion.Add(new Potion(name, description, cost));
+        //        }
+        //        inputFile.Close();
+        //    }
+        //    catch(Exception)
+        //    {
+        //        Console.WriteLine("Error reading file 'Potion.txt'");
+        //    }
+        //}
     }
 }

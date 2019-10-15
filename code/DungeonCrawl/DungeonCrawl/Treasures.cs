@@ -30,33 +30,33 @@ namespace DungeonCrawl
         public static void Display()
         {
             Console.WriteLine();
-            foreach(var i in Lists.treasure)
+            foreach(var i in Global.treasure)
             {
                 Console.WriteLine($"{i.Name}");
             }
         }
 
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../DungeonCrawl/Data/Treasures.txt");
+        //public static void Upload()
+        //{
+        //    try
+        //    {
+        //        StreamReader inputFile;
+        //        inputFile = File.OpenText("../../../DungeonCrawl/Data/Treasures.txt");
 
-                while (!inputFile.EndOfStream)
-                {
-                    string name = inputFile.ReadLine();
-                    string description = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
+        //        while (!inputFile.EndOfStream)
+        //        {
+        //            string name = inputFile.ReadLine();
+        //            string description = inputFile.ReadLine();
+        //            int cost = int.Parse(inputFile.ReadLine());
 
-                    Lists.treasure.Add(new Treasures(name, description, cost));
-                }
-                inputFile.Close();
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Error reading file 'Treasures.txt'");
-            }
-        }
+        //            Global.treasure.Add(new Treasures(name, description, cost));
+        //        }
+        //        inputFile.Close();
+        //    }
+        //    catch(Exception)
+        //    {
+        //        Console.WriteLine("Error reading file 'Treasures.txt'");
+        //    }
+        //}
     }
 }

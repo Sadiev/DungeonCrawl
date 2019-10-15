@@ -32,13 +32,13 @@ namespace DungeonCrawl
 
         public static void Main(string[] args)
         {
-            AskLogin();
-            Weapon.Upload();
-            Treasures.Upload();
-            Potion.Upload();
-            Item.Upload();
-            Mob.Upload();
-            Room.Upload();
+            //AskLogin();
+            Load.Weapons();
+            Load.Treasures();
+            Load.Potions();
+            Load.Items();
+            Load.Mobs();
+            Load.Rooms();
             Play();
         }
 
@@ -124,7 +124,7 @@ namespace DungeonCrawl
 
         static void PrintList(string name)
         {
-            var item = Lists.items.Find(x => x.ItemName.ToLower() == name.ToLower());
+            var item = Global.items.Find(x => x.ItemName.ToLower() == name.ToLower());
             if (item != null)
             {
                 Console.WriteLine(item.ItemName);
@@ -132,7 +132,7 @@ namespace DungeonCrawl
                 Console.WriteLine(item.Cost);
                 return;
             }
-            var mob = Lists.mobs.Find(x => x.MobName.ToLower() == name.ToLower());
+            var mob = Global.mobs.Find(x => x.MobName.ToLower() == name.ToLower());
             if (mob != null)
             {
                 Console.WriteLine(mob.MobName);
@@ -142,7 +142,7 @@ namespace DungeonCrawl
                 Console.WriteLine(mob.HP);
                 return;
             }
-            var p = Lists.potion.Find(x => x.Name.ToLower() == name.ToLower());
+            var p = Global.potion.Find(x => x.Name.ToLower() == name.ToLower());
             if (p != null)
             {
                 Console.WriteLine(p.Name);
@@ -150,7 +150,7 @@ namespace DungeonCrawl
                 Console.WriteLine(p.Cost);
                 return;
             }
-            var room = Lists.rooms.Find(x => x.RoomName.ToLower() == name.ToLower());
+            var room = Global.rooms.Find(x => x.RoomName.ToLower() == name.ToLower());
             if (room != null)
             {
                 Console.WriteLine(room.RoomName);
@@ -158,7 +158,7 @@ namespace DungeonCrawl
                 Console.WriteLine(room.Exits);
                 return;
             }
-            var t = Lists.treasure.Find(x => x.Name.ToLower() == name.ToLower());
+            var t = Global.treasure.Find(x => x.Name.ToLower() == name.ToLower());
             if (t != null)
             {
                 Console.WriteLine(t.Name);
@@ -166,7 +166,7 @@ namespace DungeonCrawl
                 Console.WriteLine(t.Cost);
                 return;
             }
-            var w = Lists.weapon.Find(x => x.Name.ToLower() == name.ToLower());
+            var w = Global.weapon.Find(x => x.Name.ToLower() == name.ToLower());
             if (w != null)
             {
                 Console.WriteLine(w.Name);
@@ -193,7 +193,7 @@ namespace DungeonCrawl
             switch (direction)
             {
                 case "north":
-                    if (location < Lists.rooms.Count)
+                    if (location < Global.rooms.Count)
                     {
                         location++;
                     }

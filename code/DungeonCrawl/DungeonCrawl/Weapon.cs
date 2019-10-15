@@ -33,35 +33,35 @@ namespace DungeonCrawl
         public static void Display()
         {
             Console.WriteLine();
-            foreach(var i in Lists.weapon)
+            foreach(var i in Global.weapon)
             {
                 Console.WriteLine($"{i.Name}");
             }
         }
 
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../DungeonCrawl/Data/Weapons.txt");
+        //public static void Upload()
+        //{
+        //    try
+        //    {
+        //        StreamReader inputFile;
+        //        inputFile = File.OpenText("../../../DungeonCrawl/Data/Weapons.txt");
 
-                while (!inputFile.EndOfStream)
-                {
+        //        while (!inputFile.EndOfStream)
+        //        {
 
-                    string name = inputFile.ReadLine();
-                    string damage = inputFile.ReadLine();
-                    string damageType = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
+        //            string name = inputFile.ReadLine();
+        //            string damage = inputFile.ReadLine();
+        //            string damageType = inputFile.ReadLine();
+        //            int cost = int.Parse(inputFile.ReadLine());
 
-                    Lists.weapon.Add(new Weapon(name, damage, damageType, cost));
-                }
-                inputFile.Close();;
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Error reading file 'Weapons.txt'");
-            }
-        }
+        //            Global.weapon.Add(new Weapon(name, damage, damageType, cost));
+        //        }
+        //        inputFile.Close();;
+        //    }
+        //    catch(Exception)
+        //    {
+        //        Console.WriteLine("Error reading file 'Weapons.txt'");
+        //    }
+        //}
     }
 }

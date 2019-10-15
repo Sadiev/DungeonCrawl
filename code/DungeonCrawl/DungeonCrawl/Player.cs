@@ -93,10 +93,10 @@ namespace DungeonCrawl
                         }
                     }
 
-                    Lists.CurrentPlayer = new Player(name, password, className, raceName);
+                    Global.CurrentPlayer = new Player(name, password, className, raceName);
                 }
 
-                Program.ColorPrint($"Welcome {Lists.CurrentPlayer.PlayerName}.", ConsoleColor.Green);
+                Program.ColorPrint($"Welcome {Global.CurrentPlayer.PlayerName}.", ConsoleColor.Green);
                 inputFile.Close();
             }
             catch (Exception)

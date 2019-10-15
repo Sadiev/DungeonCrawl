@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawl
 {
-    class Lists
+    class Global
     {
         public static List<Room> rooms = new List<Room>();
         public static List<Mob> mobs = new List<Mob>();

@@ -33,38 +33,38 @@ namespace DungeonCrawl
             }
         }
 
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader roomsFile;
-                string txt = "";
-                roomsFile = File.OpenText("../../../DungeonCrawl/Data/Rooms.txt");
-                bool done = false;
-                do
-                {
-                    if ((txt = roomsFile.ReadLine()) == null)
-                    {
-                        done = true;
-                    }
-                    else
-                    {
-                        Lists.rooms.Add(new Room { RoomName = txt, Description = roomsFile.ReadLine(), Exits = roomsFile.ReadLine() });
-                    }
-                } while (!done);
+        //public static void Upload()
+        //{
+        //    try
+        //    {
+        //        StreamReader roomsFile;
+        //        string txt = "";
+        //        roomsFile = File.OpenText("../../../DungeonCrawl/Data/Rooms.txt");
+        //        bool done = false;
+        //        do
+        //        {
+        //            if ((txt = roomsFile.ReadLine()) == null)
+        //            {
+        //                done = true;
+        //            }
+        //            else
+        //            {
+        //                Global.rooms.Add(new Room { RoomName = txt, Description = roomsFile.ReadLine(), Exits = roomsFile.ReadLine() });
+        //            }
+        //        } while (!done);
 
-                roomsFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Room.txt'");
-            }
-        }
+        //        roomsFile.Close();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Console.WriteLine("Error reading file 'Room.txt'");
+        //    }
+        //}
 
         public static void Display()
         {
             Console.WriteLine();
-            foreach (var item in Lists.rooms)
+            foreach (var item in Global.rooms)
             {
                 Program.ColorPrint($"{item.RoomName}\n", ConsoleColor.Yellow);
             }

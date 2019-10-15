@@ -44,7 +44,8 @@
   <ItemGroup>
     <Compile Include="Conversion.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Lists.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Load.cs" />
     <Compile Include="Mob.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Potion.cs" />
@@ -64,7 +65,7 @@
     <Content Include="Data\Items.txt" />
     <Content Include="Data\Mobs.txt" />
     <Content Include="Data\Rooms.txt" />
-    <Content Include="Data\Potion.txt" />
+    <Content Include="Data\Potions.txt" />
     <Content Include="Data\Treasures.txt" />
     <Content Include="Data\Weapons.txt" />
   </ItemGroup>
