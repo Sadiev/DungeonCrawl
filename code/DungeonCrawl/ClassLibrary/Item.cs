@@ -21,37 +21,5 @@ namespace ClassLibrary
             }
             return null;
         }
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader itemFile;
-                string txt = "";
-                itemFile = File.OpenText("../../../ClassLibrary/Data/Items.txt");
-                bool done = false;
-                do
-                {
-                    if ((txt = itemFile.ReadLine()) == null)
-                    {
-                        done = true;
-                    }
-                    else
-                    {
-                        Lists.items.Add(new Item
-                        {
-                            ItemName = txt,
-                            Description = itemFile.ReadLine(),
-                            Cost = decimal.TryParse(itemFile.ReadLine(), out decimal result) ? result : 0,
-                        });
-                    }
-                } while (!done);
-
-                itemFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Items.txt'");
-            }
-        }
     }
 }

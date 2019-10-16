@@ -36,28 +36,5 @@ namespace ClassLibrary
             }
             return null;
         }
-
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../ClassLibrary/Data/Potion.txt");
-
-                while(!inputFile.EndOfStream)
-                {
-                    string name = inputFile.ReadLine();
-                    string description = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
-
-                    Lists.potion.Add(new Potion(name, description, cost));
-                }
-                inputFile.Close();
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Error reading file 'Potion.txt'");
-            }
-        }
     }
 }

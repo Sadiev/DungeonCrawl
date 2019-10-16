@@ -35,28 +35,5 @@ namespace ClassLibrary
             }
             return null;
         }
-
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../ClassLibrary/Data/Treasures.txt");
-
-                while (!inputFile.EndOfStream)
-                {
-                    string name = inputFile.ReadLine();
-                    string description = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
-
-                    Lists.treasure.Add(new Treasures(name, description, cost));
-                }
-                inputFile.Close();
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Error reading file 'Treasures.txt'");
-            }
-        }
     }
 }

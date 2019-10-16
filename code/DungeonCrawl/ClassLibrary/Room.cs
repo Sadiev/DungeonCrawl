@@ -33,34 +33,6 @@ namespace ClassLibrary
             }
         }
 
-        public static void Upload()
-        {
-            try
-            {
-                StreamReader roomsFile;
-                string txt = "";
-                roomsFile = File.OpenText("../../../ClassLibrary/Data/Rooms.txt");
-                bool done = false;
-                do
-                {
-                    if ((txt = roomsFile.ReadLine()) == null)
-                    {
-                        done = true;
-                    }
-                    else
-                    {
-                        Lists.rooms.Add(new Room { RoomName = txt, Description = roomsFile.ReadLine(), Exits = roomsFile.ReadLine() });
-                    }
-                } while (!done);
-
-                roomsFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Room.txt'");
-            }
-        }
-
         public static string Display()
         {
             foreach (var item in Lists.rooms)
