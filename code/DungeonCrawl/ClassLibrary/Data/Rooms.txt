@@ -1,15 +1,5 @@
-Entrance
-Start
-north
-Hallway
-Hall
-north south
-Barracks
-Barracks
-north south
-Laboratory
-Laboratory
-north south
-Temple
-Temple
-south
+Entrance,Start,north
+Hallway,Hall,north south
+Barracks,Barracks,north south
+Laboratory,Laboratory,north south
+Temple,Temple,south

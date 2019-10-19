@@ -1,5 +1,3 @@
-﻿Goblin
-a small guy, for you
-10
-5
-0
+﻿Goblin,A small guy,10,5,0
+Kobold,A spirit that haunts houses or lives underground in caves or mines,11,2,2
+Black Dragon,Black dragons are very powerful monsters,20,5,5
