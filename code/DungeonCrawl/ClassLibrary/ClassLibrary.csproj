@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Conversion.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Lists.cs" />
     <Compile Include="LoginInfo.cs" />
     <Compile Include="Mob.cs" />
     <Compile Include="Player.cs" />
