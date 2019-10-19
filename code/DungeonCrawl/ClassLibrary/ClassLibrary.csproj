@@ -58,6 +58,7 @@
     <Content Include="Data\Items.txt" />
     <Content Include="Data\Mobs.txt" />
     <Content Include="Data\Rooms.txt" />
+    <Content Include="Data\Potions.txt" />
     <Content Include="Data\Treasures.txt" />
     <Content Include="Data\Weapons.txt" />
   </ItemGroup>
