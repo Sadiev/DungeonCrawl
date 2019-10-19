@@ -9,170 +9,105 @@ namespace ClassLibrary
 {
     public class Upload
     {
-        public static void Weapon()
+       public static void Items()
         {
-            try
+            using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Items.txt"))
             {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../ClassLibrary/Data/Weapons.txt");
-
-                while (!inputFile.EndOfStream)
+                while (!reader.EndOfStream)
                 {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
 
-                    string name = inputFile.ReadLine();
-                    string damage = inputFile.ReadLine();
-                    string damageType = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
-
-                    Lists.weapon.Add(new Weapon(name, damage, damageType, cost));
+                    Global.items.Add(new Item
+                    {
+                        ItemName = values[0],
+                        Description = values[1],
+                        Cost = decimal.TryParse(values[1], out decimal result) ? result : 0
+                    });
                 }
-                inputFile.Close(); ;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Weapons.txt'");
             }
         }
+        public static void Mobs()
+        {
+            using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Mobs.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
 
+                    Global.mobs.Add(new Mob
+                    {
+                        MobName = values[0],
+                        Description = values[1],
+                        HP = int.TryParse(values[2], out int result) ? result : 0,
+                        AC = int.TryParse(values[3], out result) ? result : 0,
+                        Armor = int.TryParse(values[4], out result) ? result : 0
+                    });
+                }
+            }
+        }
+        public static void Potions()
+        {
+            using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Potions.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    Global.potion.Add(new Potion
+                    {
+                        Name = values[0],
+                        Description = values[1],
+                        Cost = int.TryParse(values[2], out int result) ? result : 0
+                    });
+                }
+            }
+        }
+        public static void Rooms()
+        {
+            using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Rooms.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    Global.rooms.Add(new Room { RoomName = values[0], Description = values[1], Exits = values[2] });
+                }
+            }
+        }
         public static void Treasures()
         {
-            try
+            using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Treasures.txt"))
             {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../ClassLibrary/Data/Treasures.txt");
-
-                while (!inputFile.EndOfStream)
+                while (!reader.EndOfStream)
                 {
-                    string name = inputFile.ReadLine();
-                    string description = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
 
-                    Lists.treasure.Add(new Treasures(name, description, cost));
+                    Global.treasure.Add(new Treasures { Name = values[0], Description = values[1], Cost = int.TryParse(values[2], out int result) ? result : 0 });
                 }
-                inputFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Treasures.txt'");
             }
         }
-
-        public static void Potion()
+        public static void Weapons()
         {
-            try
+            using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Weapons.txt"))
             {
-                StreamReader inputFile;
-                inputFile = File.OpenText("../../../ClassLibrary/Data/Potion.txt");
-
-                while (!inputFile.EndOfStream)
+                while (!reader.EndOfStream)
                 {
-                    string name = inputFile.ReadLine();
-                    string description = inputFile.ReadLine();
-                    int cost = int.Parse(inputFile.ReadLine());
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
 
-                    Lists.potion.Add(new Potion(name, description, cost));
+                    Global.weapon.Add(new Weapon
+                    {
+                        Name = values[0],
+                        Damage = values[1],
+                        DamageType = values[2],
+                        Cost = int.TryParse(values[3], out int result) ? result : 0
+                    });
                 }
-                inputFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Potion.txt'");
-            }
-        }
-
-        public static void Mob()
-        {
-            try
-            {
-                StreamReader roomsFile;
-                string txt = "";
-                roomsFile = File.OpenText("../../../ClassLibrary/Data/Mobs.txt");
-                bool done = false;
-                do
-                {
-                    if ((txt = roomsFile.ReadLine()) == null)
-                    {
-                        done = true;
-                    }
-                    else
-                    {
-                        Lists.mobs.Add(new Mob
-                        {
-                            MobName = txt,
-                            Description = roomsFile.ReadLine(),
-                            HP = int.TryParse(roomsFile.ReadLine(), out int result) ? result : 0,
-                            AC = int.TryParse(roomsFile.ReadLine(), out result) ? result : 0,
-                            Armor = int.TryParse(roomsFile.ReadLine(), out result) ? result : 0
-                        });
-                    }
-                } while (!done);
-
-                roomsFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Mob.txt'");
-            }
-        }
-
-        public static void Item()
-        {
-            try
-            {
-                StreamReader itemFile;
-                string txt = "";
-                itemFile = File.OpenText("../../../ClassLibrary/Data/Items.txt");
-                bool done = false;
-                do
-                {
-                    if ((txt = itemFile.ReadLine()) == null)
-                    {
-                        done = true;
-                    }
-                    else
-                    {
-                        Lists.items.Add(new Item
-                        {
-                            ItemName = txt,
-                            Description = itemFile.ReadLine(),
-                            Cost = decimal.TryParse(itemFile.ReadLine(), out decimal result) ? result : 0,
-                        });
-                    }
-                } while (!done);
-
-                itemFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Items.txt'");
-            }
-        }
-
-        public static void Room()
-        {
-            try
-            {
-                StreamReader roomsFile;
-                string txt = "";
-                roomsFile = File.OpenText("../../../ClassLibrary/Data/Rooms.txt");
-                bool done = false;
-                do
-                {
-                    if ((txt = roomsFile.ReadLine()) == null)
-                    {
-                        done = true;
-                    }
-                    else
-                    {
-                        Lists.rooms.Add(new Room { RoomName = txt, Description = roomsFile.ReadLine(), Exits = roomsFile.ReadLine() });
-                    }
-                } while (!done);
-
-                roomsFile.Close();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Error reading file 'Room.txt'");
             }
         }
     }

@@ -32,7 +32,7 @@ namespace ClassLibrary
 
         public static string Display()
         {
-            foreach(var i in Lists.weapon)
+            foreach(var i in Global.weapon)
             {
                 return $"{i.Name}";
             }

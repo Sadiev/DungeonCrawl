@@ -29,7 +29,7 @@ namespace ClassLibrary
 
         public static string Display()
         {
-            foreach(var i in Lists.treasure)
+            foreach(var i in Global.treasure)
             {
                 return $"{i.Name}";
             }

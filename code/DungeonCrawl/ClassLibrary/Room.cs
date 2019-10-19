@@ -35,7 +35,7 @@ namespace ClassLibrary
 
         public static string Display()
         {
-            foreach (var item in Lists.rooms)
+            foreach (var item in Global.rooms)
             {
                 return $"{item.RoomName}\n";
             }

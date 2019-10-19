@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class Global
+    public class Global
     {
         public static List<Room> rooms = new List<Room>();
         public static List<Mob> mobs = new List<Mob>();

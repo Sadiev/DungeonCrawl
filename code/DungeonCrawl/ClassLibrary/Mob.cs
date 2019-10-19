@@ -17,7 +17,7 @@ namespace ClassLibrary
         public int Armor { get; set; }
         public static string Display()
         {
-            foreach (var item in Lists.mobs)
+            foreach (var item in Global.mobs)
             {
                 return $"{item.MobName}\n";
             }

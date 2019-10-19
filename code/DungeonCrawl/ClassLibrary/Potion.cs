@@ -30,7 +30,7 @@ namespace ClassLibrary
 
         public static string Display()
         {
-            foreach(var i in Lists.potion)
+            foreach(var i in Global.potion)
             {
                 return $"{i.Name}";
             }

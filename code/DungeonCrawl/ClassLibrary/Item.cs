@@ -15,7 +15,7 @@ namespace ClassLibrary
 
         public static string Display()
         {
-            foreach (var item in Lists.items)
+            foreach (var item in Global.items)
             {
                 return $"{item.ItemName}\n";
             }
