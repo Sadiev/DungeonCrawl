@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conversion.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="LoginInfo.cs" />
     <Compile Include="Mob.cs" />
