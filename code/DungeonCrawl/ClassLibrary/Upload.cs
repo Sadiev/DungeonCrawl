@@ -42,7 +42,8 @@ namespace ClassLibrary
                         Description = values[1],
                         HP = int.TryParse(values[2], out int result) ? result : 0,
                         AC = int.TryParse(values[3], out result) ? result : 0,
-                        Armor = int.TryParse(values[4], out result) ? result : 0
+                        Dead = bool.Parse(values[4]),
+                        Damage = values[5]
                     });
                 }
             }

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AliveObject.cs" />
+    <Compile Include="Combat.cs" />
     <Compile Include="Conversion.cs" />
+    <Compile Include="Dice.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Interfaces\IInventory.cs" />
     <Compile Include="Item.cs" />

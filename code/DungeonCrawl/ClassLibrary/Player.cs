@@ -9,26 +9,19 @@ namespace ClassLibrary
 {
     public class Player: AliveObject
     {
+        //TODO.  "Damage" needs to be deleted, just used for sprint 3.
+
         public enum ClassType { warrior, ranger, wizard }
         public enum RaceType { human, dwarf, elf }
-        //public string PlayerName { get; set; }
         public string Password { get; set; }
         public string ClassName { get; set; }
         public string RaceName { get; set; }
-        public Player(string name, string password, string className, string raceName)
+        public Player(string name, string password, string className, string raceName, int hp, int ac, bool dead, string damage)
+                    :base(name, hp, ac, dead, damage)
         {
-            Name = name;
             Password = password;
             ClassName = className;
             RaceName = raceName;
-        }
-
-        public Player()
-        {
-            //PlayerName = "";
-            //Password = "";
-            //ClassName = "";
-            //RaceName = "";
         }
 
         public static void CreatePlayer()
@@ -37,6 +30,10 @@ namespace ClassLibrary
             string password = "";
             string className = "";
             string raceName = "";
+            int hp = 0;
+            int ac = 15;
+            string damage = "";
+            bool dead = false;
             bool goodPassword = false;
             bool goodClass = false;
             bool goodRace = false;
@@ -83,10 +80,26 @@ namespace ClassLibrary
                 Console.Write("> ");
                 className = Conversion.ConvertToLower(Console.ReadLine());
 
-                if (className == ClassType.warrior.ToString() || className == ClassType.ranger.ToString() || className == ClassType.wizard.ToString())
+                if (className == ClassType.warrior.ToString())
                 {
+                    damage = "1d8";
                     goodClass = true;
                 }
+                else if (className == ClassType.ranger.ToString())
+                {
+                    damage = "1d8";
+                    goodClass = true;
+                }
+                else if (className == ClassType.wizard.ToString())
+                {
+                    damage = "1d6";
+                    goodClass = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input! Try again!");
+                }
+
             }
 
             while (goodRace == false)
@@ -96,14 +109,25 @@ namespace ClassLibrary
                 Console.Write("> ");
                 raceName = Conversion.ConvertToLower(Console.ReadLine());
 
-                if (raceName == RaceType.human.ToString() || raceName == RaceType.dwarf.ToString() || raceName == RaceType.elf.ToString())
+                if (raceName == RaceType.human.ToString())
                 {
+                    hp = 16;
+                    goodRace = true;
+                }
+                else if (raceName == RaceType.dwarf.ToString())
+                {
+                    hp = 18;
+                    goodRace = true;
+                }
+                else if (raceName == RaceType.elf.ToString())
+                {
+                    hp = 14;
                     goodRace = true;
                 }
             }
 
 
-            Player myPlayer = new Player(name, password, className, raceName);
+            Player myPlayer = new Player(name, password, className, raceName, hp, ac, dead, damage);
 
             Player.WriteFile(myPlayer);
         }
@@ -119,6 +143,10 @@ namespace ClassLibrary
                 outputFile.WriteLine(myPlayer.Password);
                 outputFile.WriteLine(myPlayer.ClassName);
                 outputFile.WriteLine(myPlayer.RaceName);
+                outputFile.WriteLine(myPlayer.HP);
+                outputFile.WriteLine(myPlayer.AC);
+                outputFile.WriteLine(myPlayer.Dead);
+                outputFile.WriteLine(myPlayer.Damage);
 
                 outputFile.Close();
             }
@@ -153,6 +181,10 @@ namespace ClassLibrary
                     string password = inputFile.ReadLine();
                     string className = inputFile.ReadLine();
                     string raceName = inputFile.ReadLine();
+                    int hp = int.Parse(inputFile.ReadLine());
+                    int ac = int.Parse(inputFile.ReadLine());
+                    bool dead = bool.Parse(inputFile.ReadLine());
+                    string damage = inputFile.ReadLine();
 
                     while (exit == false)
                     {
@@ -168,7 +200,7 @@ namespace ClassLibrary
                         }
                     }
 
-                    Global.CurrentPlayer = new Player(name, password, className, raceName);
+                    Global.CurrentPlayer = new Player(name, password, className, raceName, hp, ac, dead, damage);
                 }
 
                 //Program.ColorPrint($"Welcome {Global.CurrentPlayer.PlayerName}.", ConsoleColor.Green);

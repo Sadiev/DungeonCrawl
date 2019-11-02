@@ -8,10 +8,18 @@ namespace ClassLibrary
 {
     public class AliveObject
     {
+        public AliveObject(string name, int hp, int ac, bool dead, string damage)
+        {
+            Name = name;
+            HP = hp;
+            AC = ac;
+            Dead = dead;
+            Damage = damage;
+        }
         public string Name { get; set; }
-        public string Description { get; set; }
         public int HP { get; set; }
         public int AC { get; set; }
-        public int Armor { get; set; }
+        public bool Dead { get; set; }
+        public string Damage { get; set; }
     }
 }
