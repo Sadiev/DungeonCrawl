@@ -8,12 +8,16 @@ namespace ClassLibrary
 {
     public class Mob: AliveObject
     {
-        public Mob(string name, string description, int hp, int ac, bool dead, string damage )
+        public Mob(string description, string name, int hp, int ac, bool dead, string damage )
                     : base(name, hp, ac, dead, damage)
         {
             Description = description;
         }
 
+        public Mob()
+        { 
+        
+        }
         public string Description { get; set; }
         public static void Display()
         {

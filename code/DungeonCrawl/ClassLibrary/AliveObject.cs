@@ -16,6 +16,10 @@ namespace ClassLibrary
             Dead = dead;
             Damage = damage;
         }
+        public AliveObject()
+        { 
+        
+        }
         public string Name { get; set; }
         public int HP { get; set; }
         public int AC { get; set; }

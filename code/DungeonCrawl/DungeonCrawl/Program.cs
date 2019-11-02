@@ -110,7 +110,7 @@ namespace DungeonCrawl
             {
                 Console.WriteLine(mob.Name);
                 Console.WriteLine(mob.Description);
-                Console.WriteLine(mob.Armor);
+                Console.WriteLine(mob.Damage);
                 Console.WriteLine(mob.AC);
                 Console.WriteLine(mob.HP);
                 return;
