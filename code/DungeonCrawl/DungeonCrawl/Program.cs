@@ -97,10 +97,10 @@ namespace DungeonCrawl
 
         static void PrintList(string name)
         {
-            var item = Global.items.Find(x => x.ItemName.ToLower() == name.ToLower());
+            var item = Global.items.Find(x => x.Name.ToLower() == name.ToLower());
             if (item != null)
             {
-                Console.WriteLine(item.ItemName);
+                Console.WriteLine(item.Name);
                 Console.WriteLine(item.Description);
                 Console.WriteLine(item.Cost);
                 return;

@@ -44,6 +44,7 @@
     <Compile Include="AliveObject.cs" />
     <Compile Include="Conversion.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Interfaces\IInventory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="LoginInfo.cs" />
     <Compile Include="Mob.cs" />
@@ -64,7 +65,6 @@
     <Content Include="Data\Weapons.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Users\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

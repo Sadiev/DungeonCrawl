@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using ClassLibrary.Interfaces;
 
 namespace ClassLibrary
 {
-    public class Weapon
+    public class Weapon: IInventory
     {
-        public Weapon(string name, string damage, string damageType, int cost)
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Cost { get; set; }
+        public string Damage { get; set; }
+        public string DamageType { get; set; }
+        public Weapon(string name, string damage, string damageType, decimal cost)
         {
             Name = name;
             Damage = damage;
@@ -19,16 +25,8 @@ namespace ClassLibrary
 
         public Weapon()
         {
-            Name = "";
-            Damage = "";
-            DamageType = "";
-            Cost = 0;
-        }
 
-        public string Name { get; set; }
-        public string Damage { get; set; }
-        public string DamageType { get; set; }
-        public int Cost { get; set; }
+        }
 
         public static void Display()
         {

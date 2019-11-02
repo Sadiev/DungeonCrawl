@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Item
+    public class Item: IInventory
     {
-        public string ItemName { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public decimal Cost { get; set; }
 
@@ -17,7 +18,7 @@ namespace ClassLibrary
         {
             foreach (var item in Global.items)
             {
-                Console.WriteLine($"{item.ItemName}");
+                Console.WriteLine($"{item.Name}");
             }
         }
     }

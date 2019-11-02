@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using ClassLibrary.Interfaces;
 
 namespace ClassLibrary
 {
-    public class Potion
+    public class Potion: IInventory
     {
-        public Potion(string name, string description, int cost)
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Cost { get; set; }
+        public Potion(string name, string description, decimal cost)
         {
             Name = name;
             Description = description;
@@ -18,15 +22,8 @@ namespace ClassLibrary
 
         public Potion()
         {
-            Name = "";
-            Description = "";
-            Cost = 0;
-        }
-        
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Cost { get; set; }
 
+        }
 
         public static void Display()
         {

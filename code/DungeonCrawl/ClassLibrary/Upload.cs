@@ -20,7 +20,7 @@ namespace ClassLibrary
 
                     Global.items.Add(new Item
                     {
-                        ItemName = values[0],
+                        Name = values[0],
                         Description = values[1],
                         Cost = decimal.TryParse(values[1], out decimal result) ? result : 0
                     });
@@ -60,7 +60,7 @@ namespace ClassLibrary
                     {
                         Name = values[0],
                         Description = values[1],
-                        Cost = int.TryParse(values[2], out int result) ? result : 0
+                        Cost = decimal.TryParse(values[2], out decimal result) ? result : 0
                     });
                 }
             }
@@ -87,7 +87,7 @@ namespace ClassLibrary
                     var line = reader.ReadLine();
                     var values = line.Split(',');
 
-                    Global.treasure.Add(new Treasures { Name = values[0], Description = values[1], Cost = int.TryParse(values[2], out int result) ? result : 0 });
+                    Global.treasure.Add(new Treasures { Name = values[0], Description = values[1], Cost = decimal.TryParse(values[2], out decimal result) ? result : 0 });
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace ClassLibrary
                         Name = values[0],
                         Damage = values[1],
                         DamageType = values[2],
-                        Cost = int.TryParse(values[3], out int result) ? result : 0
+                        Cost = decimal.TryParse(values[3], out decimal result) ? result : 0
                     });
                 }
             }
