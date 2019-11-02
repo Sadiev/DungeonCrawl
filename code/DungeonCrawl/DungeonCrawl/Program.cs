@@ -65,7 +65,7 @@ namespace DungeonCrawl
                         Console.WriteLine(Item.Display());
                         break;
                     case "mob":
-                        Console.WriteLine(Mob.Display());
+                        Mob.Display();
                         break;
                     case "north":
                         Move("north");
@@ -105,10 +105,10 @@ namespace DungeonCrawl
                 Console.WriteLine(item.Cost);
                 return;
             }
-            var mob = Global.mobs.Find(x => x.MobName.ToLower() == name.ToLower());
+            var mob = Global.mobs.Find(x => x.Name.ToLower() == name.ToLower());
             if (mob != null)
             {
-                Console.WriteLine(mob.MobName);
+                Console.WriteLine(mob.Name);
                 Console.WriteLine(mob.Description);
                 Console.WriteLine(mob.Armor);
                 Console.WriteLine(mob.AC);

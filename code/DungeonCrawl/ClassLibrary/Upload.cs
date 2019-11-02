@@ -38,7 +38,7 @@ namespace ClassLibrary
 
                     Global.mobs.Add(new Mob
                     {
-                        MobName = values[0],
+                        Name = values[0],
                         Description = values[1],
                         HP = int.TryParse(values[2], out int result) ? result : 0,
                         AC = int.TryParse(values[3], out result) ? result : 0,

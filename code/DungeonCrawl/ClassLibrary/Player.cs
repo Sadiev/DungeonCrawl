@@ -7,15 +7,17 @@ using System.IO;
 
 namespace ClassLibrary
 {
-    public class Player
+    public class Player: AliveObject
     {
         public enum ClassType { warrior, ranger, wizard }
         public enum RaceType { human, dwarf, elf }
-
-
+        //public string PlayerName { get; set; }
+        public string Password { get; set; }
+        public string ClassName { get; set; }
+        public string RaceName { get; set; }
         public Player(string name, string password, string className, string raceName)
         {
-            PlayerName = name;
+            Name = name;
             Password = password;
             ClassName = className;
             RaceName = raceName;
@@ -23,16 +25,11 @@ namespace ClassLibrary
 
         public Player()
         {
-            PlayerName = "";
-            Password = "";
-            ClassName = "";
-            RaceName = "";
+            //PlayerName = "";
+            //Password = "";
+            //ClassName = "";
+            //RaceName = "";
         }
-
-        public string PlayerName { get; set; }
-        public string Password { get; set; }
-        public string ClassName { get; set; }
-        public string RaceName { get; set; }
 
         public static void CreatePlayer()
         {
@@ -116,9 +113,9 @@ namespace ClassLibrary
             try
             {
                 StreamWriter outputFile;
-                outputFile = File.AppendText($"../../../ClassLibrary/Users/{myPlayer.PlayerName}.txt");
+                outputFile = File.AppendText($"../../../ClassLibrary/Users/{myPlayer.Name}.txt");
 
-                outputFile.WriteLine(myPlayer.PlayerName);
+                outputFile.WriteLine(myPlayer.Name);
                 outputFile.WriteLine(myPlayer.Password);
                 outputFile.WriteLine(myPlayer.ClassName);
                 outputFile.WriteLine(myPlayer.RaceName);
@@ -127,7 +124,7 @@ namespace ClassLibrary
             }
             catch (Exception)
             {
-                Console.WriteLine($"Error reading file {myPlayer.PlayerName}!");
+                Console.WriteLine($"Error reading file {myPlayer.Name}!");
             }
         }
 
