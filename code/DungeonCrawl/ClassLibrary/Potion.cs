@@ -28,13 +28,12 @@ namespace ClassLibrary
         public int Cost { get; set; }
 
 
-        public static string Display()
+        public static void Display()
         {
             foreach(var i in Global.potion)
             {
-                return $"{i.Name}";
+                Console.WriteLine($"{i.Name}");
             }
-            return null;
         }
     }
 }

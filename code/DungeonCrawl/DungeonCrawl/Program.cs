@@ -50,19 +50,19 @@ namespace DungeonCrawl
                 switch (inputList[0])
                 {
                     case "room":
-                        Console.WriteLine(Room.Display());
+                        Room.Display();
                         break;
                     case "weapon":
-                        Console.WriteLine(Weapon.Display());
+                        Weapon.Display();
                         break;
                     case "potion":
-                        Console.WriteLine(Potion.Display());
+                        Potion.Display();
                         break;
                     case "treasure":
-                        Console.WriteLine(Treasures.Display());
+                        Treasures.Display();
                         break;
                     case "item":
-                        Console.WriteLine(Item.Display());
+                        Item.Display();
                         break;
                     case "mob":
                         Mob.Display();

@@ -30,13 +30,12 @@ namespace ClassLibrary
         public string DamageType { get; set; }
         public int Cost { get; set; }
 
-        public static string Display()
+        public static void Display()
         {
             foreach(var i in Global.weapon)
             {
-                return $"{i.Name}";
+                Console.WriteLine($"{i.Name}");
             }
-            return null;
         }
     }
 }

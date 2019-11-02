@@ -33,13 +33,12 @@ namespace ClassLibrary
             }
         }
 
-        public static string Display()
+        public static void Display()
         {
             foreach (var item in Global.rooms)
             {
-                return $"{item.RoomName}\n";
+                Console.WriteLine($"{item.RoomName}");
             }
-            return null;
         }
     }
 }

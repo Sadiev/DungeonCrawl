@@ -7,7 +7,7 @@ namespace ClassLibrary
         {
             foreach (var item in Global.mobs)
             {
-                System.Console.WriteLine($"{item.Name}\n");
+                System.Console.WriteLine($"{item.Name}");
             }
         }
     }

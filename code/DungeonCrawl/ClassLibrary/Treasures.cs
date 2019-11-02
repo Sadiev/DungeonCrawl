@@ -27,13 +27,12 @@ namespace ClassLibrary
         public string Description { get; set; }
         public int Cost { get; set; }
 
-        public static string Display()
+        public static void Display()
         {
             foreach(var i in Global.treasure)
             {
-                return $"{i.Name}";
+                Console.WriteLine($"{i.Name}");
             }
-            return null;
         }
     }
 }

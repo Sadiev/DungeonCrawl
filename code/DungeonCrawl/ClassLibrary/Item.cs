@@ -13,13 +13,12 @@ namespace ClassLibrary
         public string Description { get; set; }
         public decimal Cost { get; set; }
 
-        public static string Display()
+        public static void Display()
         {
             foreach (var item in Global.items)
             {
-                return $"{item.ItemName}\n";
+                Console.WriteLine($"{item.ItemName}");
             }
-            return null;
         }
     }
 }
