@@ -9,7 +9,7 @@ namespace ClassLibrary
 {
     public class Upload
     {
-       public static void Items()
+        public static void Items()
         {
             using (var reader = new StreamReader(@"../../../ClassLibrary/Data/Items.txt"))
             {
@@ -75,7 +75,14 @@ namespace ClassLibrary
                     var line = reader.ReadLine();
                     var values = line.Split(',');
 
-                    Global.rooms.Add(new Room { RoomName = values[0], Description = values[1], Exits = values[2] });
+                    Global.rooms.Add(new Room
+                    {
+                        RoomID = int.Parse(values[0]),
+                        RoomName = values[1],
+                        Description = values[2],
+                        ExitNorth = int.Parse(values[3]),
+                        ExitSouth = int.Parse(values[4])
+                    });
                 }
             }
         }

@@ -9,29 +9,11 @@ namespace ClassLibrary
 {
     public class Room
     {
+        public int RoomID { get; set; }
         public string RoomName { get; set; }
         public string Description { get; set; }
-        public string Exits { get; set; }
-
-        public static void Write()
-        {
-            try
-            {
-                StreamWriter outputFile;
-                outputFile = File.AppendText("../../../ClassLibrary/Data/Rooms.txt");
-                Console.Write("Enter a room name > ");
-                outputFile.WriteLine(Console.ReadLine());
-                Console.Write("Enter the room description > ");
-                outputFile.WriteLine(Console.ReadLine());
-                Console.Write("Enter the room exits > ");
-                outputFile.WriteLine(Console.ReadLine());
-                outputFile.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
+        public int ExitNorth { get; set; }
+        public int ExitSouth { get; set; }
 
         public static void Display()
         {
