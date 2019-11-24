@@ -37,14 +37,13 @@ namespace WindowsForms
 
         private void weaponsButton_Click(object sender, EventArgs e)
         {
-            WeaponForm newWeapon = new WeaponForm();
-
+            WeaponForm newWeapon = new WeaponForm(this);
             newWeapon.ShowDialog();
         }
 
         private void roomsButton_Click(object sender, EventArgs e)
         {
-            Room newRoom = new Room();
+            Room newRoom = new Room(this);
 
             newRoom.ShowDialog();
         }

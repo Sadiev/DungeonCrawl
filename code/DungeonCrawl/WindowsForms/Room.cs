@@ -13,11 +13,14 @@ namespace WindowsForms
 {
     public partial class Room : Form
     {
-        public Room()
+        
+        public Room(Form callingForm)
         {
             InitializeComponent();
+            mainForm = callingForm as ObjectsForm;
         }
 
+        private ObjectsForm mainForm = null;
         private void Room_Load(object sender, EventArgs e)
         {
             exitSouthComboBox.Items.Add("Yes");
@@ -50,19 +53,14 @@ namespace WindowsForms
             {
                 southInt = -1;
             }
-            
-            //TODO this needs to save to the file after this parse is done, not before or during.
-            if (!int.TryParse(roomIdTextBox.Text, out int output) && roomIdTextBox.Text != "")
-            {
-                MessageBox.Show("Invalid input! Room Id must be a number!");
-                roomIdTextBox.Clear();
-            }
 
             try
             {
                 StreamWriter outputFile = File.AppendText(@"../../../ClassLibrary/Data/Rooms.txt");
 
                 outputFile.WriteLine($"{roomIdTextBox.Text},{roomNameTextBox.Text},{roomDescTextBox.Text},{northInt},{southInt}");
+
+                mainForm.roomsListBox.Items.Add(roomNameTextBox.Text);
 
                 outputFile.Close();
             }

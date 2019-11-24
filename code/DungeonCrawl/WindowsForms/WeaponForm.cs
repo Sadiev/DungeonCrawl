@@ -14,11 +14,12 @@ namespace WindowsForms
 {
     public partial class WeaponForm : Form
     {
-        public WeaponForm()
+        public WeaponForm(Form callingForm)
         {
             InitializeComponent();
+            mainForm = callingForm as ObjectsForm;
         }
-
+        private ObjectsForm mainForm;
         private void addButton_Click(object sender, EventArgs e)
         {
             try
@@ -26,6 +27,8 @@ namespace WindowsForms
                 StreamWriter outputFile = File.AppendText(@"../../../ClassLibrary/Data/Weapons.txt");
 
                 outputFile.WriteLine($"{weapNameComboBox.Text},{dmgTextBox.Text},{dmgTypeTextBox.Text},{costTextBox.Text}");
+
+                mainForm.weaponsListBox.Items.Add(weapNameComboBox.Text);
 
                 outputFile.Close();
             }

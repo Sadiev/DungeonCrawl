@@ -38,14 +38,14 @@
             // weaponsListBox
             // 
             this.weaponsListBox.FormattingEnabled = true;
-            this.weaponsListBox.Location = new System.Drawing.Point(617, 34);
+            this.weaponsListBox.Location = new System.Drawing.Point(12, 12);
             this.weaponsListBox.Name = "weaponsListBox";
             this.weaponsListBox.Size = new System.Drawing.Size(191, 134);
             this.weaponsListBox.TabIndex = 0;
             // 
             // weaponsButton
             // 
-            this.weaponsButton.Location = new System.Drawing.Point(672, 207);
+            this.weaponsButton.Location = new System.Drawing.Point(68, 167);
             this.weaponsButton.Name = "weaponsButton";
             this.weaponsButton.Size = new System.Drawing.Size(75, 23);
             this.weaponsButton.TabIndex = 1;
@@ -56,14 +56,14 @@
             // roomsListBox
             // 
             this.roomsListBox.FormattingEnabled = true;
-            this.roomsListBox.Location = new System.Drawing.Point(617, 260);
+            this.roomsListBox.Location = new System.Drawing.Point(228, 12);
             this.roomsListBox.Name = "roomsListBox";
-            this.roomsListBox.Size = new System.Drawing.Size(191, 121);
+            this.roomsListBox.Size = new System.Drawing.Size(191, 134);
             this.roomsListBox.TabIndex = 2;
             // 
             // roomsButton
             // 
-            this.roomsButton.Location = new System.Drawing.Point(672, 420);
+            this.roomsButton.Location = new System.Drawing.Point(280, 167);
             this.roomsButton.Name = "roomsButton";
             this.roomsButton.Size = new System.Drawing.Size(75, 23);
             this.roomsButton.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(378, 552);
+            this.exitButton.Location = new System.Drawing.Point(169, 208);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 605);
+            this.ClientSize = new System.Drawing.Size(459, 308);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.roomsButton);
             this.Controls.Add(this.roomsListBox);
@@ -100,12 +100,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox weaponsListBox;
         private System.Windows.Forms.Button weaponsButton;
-        private System.Windows.Forms.ListBox roomsListBox;
         private System.Windows.Forms.Button roomsButton;
         private System.Windows.Forms.Button exitButton;
+        public System.Windows.Forms.ListBox weaponsListBox;
+        public System.Windows.Forms.ListBox roomsListBox;
     }
 }
 
