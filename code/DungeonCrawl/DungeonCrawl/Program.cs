@@ -73,9 +73,6 @@ namespace DungeonCrawl
                     case "south":
                         Move("south");
                         break;
-                    case "add room":
-                        Room.Write();
-                        break;
                     case "look":
                         PrintList(inputList[1]);
                         break;
@@ -126,9 +123,11 @@ namespace DungeonCrawl
             var room = Global.rooms.Find(x => x.RoomName.ToLower() == name.ToLower());
             if (room != null)
             {
+                Console.WriteLine(room.RoomID);
                 Console.WriteLine(room.RoomName);
                 Console.WriteLine(room.Description);
-                Console.WriteLine(room.Exits);
+                Console.WriteLine(room.ExitNorth);
+                Console.WriteLine(room.ExitSouth);
                 return;
             }
             var t = Global.treasure.Find(x => x.Name.ToLower() == name.ToLower());
