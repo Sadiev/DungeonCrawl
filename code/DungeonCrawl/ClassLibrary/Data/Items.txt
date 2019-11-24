@@ -1,3 +1,5 @@
-﻿Flashlight,Light,5
+Flashlight,Light,5
 Key,Unlocks things,10
-Relic,Relics of a lost civilization,20
+Relic,Relics of a lost civilization
+111,222,333
+test1,test2,test3
