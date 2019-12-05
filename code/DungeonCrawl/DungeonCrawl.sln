@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonCrawl", "DungeonCraw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{96A9086E-8562-4B8C-81C0-BB89B171AD6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms", "WindowsForms\WindowsForms.csproj", "{45D3826F-9AF3-44EA-A2BC-1063A0007BF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormUI", "WindowsFormUI\WindowsFormUI.csproj", "{BCF20F6B-6623-4469-9776-EC3DAD6EE362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{96A9086E-8562-4B8C-81C0-BB89B171AD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96A9086E-8562-4B8C-81C0-BB89B171AD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96A9086E-8562-4B8C-81C0-BB89B171AD6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45D3826F-9AF3-44EA-A2BC-1063A0007BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45D3826F-9AF3-44EA-A2BC-1063A0007BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45D3826F-9AF3-44EA-A2BC-1063A0007BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45D3826F-9AF3-44EA-A2BC-1063A0007BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF20F6B-6623-4469-9776-EC3DAD6EE362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF20F6B-6623-4469-9776-EC3DAD6EE362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF20F6B-6623-4469-9776-EC3DAD6EE362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF20F6B-6623-4469-9776-EC3DAD6EE362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

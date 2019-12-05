@@ -3,3 +3,4 @@
 103,Barracks,Barracks,0,0
 104,Laboratory,Laboratory,0,0
 105,Shrine Room,Room devoted to someone,-1,0
+101,Kitchen,Food is made,0,0
