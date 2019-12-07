@@ -182,6 +182,7 @@ namespace DungeonCrawl
                     Console.WriteLine("Not a valid location");
                     break;
             }
+            Console.WriteLine($"Your current location is { Global.rooms[location].RoomName}");
         }
     }
 }
